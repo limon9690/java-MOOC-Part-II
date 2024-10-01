@@ -16,6 +16,25 @@ public class SimpleDate {
         return this.day + "." + this.month + "." + this.year;
     }
 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        SimpleDate other = (SimpleDate) obj;
+        if (day != other.day)
+            return false;
+        if (month != other.month)
+            return false;
+        if (year != other.year)
+            return false;
+        return true;
+    }
+
     public boolean earlier(SimpleDate other) {
         if (this.year < other.year) {
             return true;
