@@ -1,4 +1,4 @@
-
+import java.util.List;
 
 public class mainProgram {
 
@@ -10,4 +10,8 @@ public class mainProgram {
     // Implement here a method returnSize
     // which returns the size of the list given to it
     //as a parameter
+
+    public static int returnSize(List<Object> list) {
+        return list.size();
+    }
 }
