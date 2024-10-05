@@ -9,6 +9,10 @@ public class Item {
         this.unitPrice = unitPrice;
     }
 
+    public int getQuantity() {
+        return this.quantity;
+    }
+
     public int price() {
         return this.quantity * this.unitPrice;
     }

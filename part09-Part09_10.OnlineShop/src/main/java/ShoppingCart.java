@@ -9,6 +9,11 @@ public class ShoppingCart {
     }
 
     public void add(String product, int price) {
+        if (map.containsKey(product)) {
+            map.get(product).increaseQuantity();
+            return;
+        }
+
         Item item = new Item(product, 1, price);
         map.put(product, item);
     }
@@ -24,8 +29,8 @@ public class ShoppingCart {
     }
 
     public void print() {
-        for (String key : map.keySet()) {
-            System.out.println(key + ": " + 1);
+        for (String it : map.keySet()) {
+            System.out.println(it + ": " + map.get(it).getQuantity());
         }
     }
 }
