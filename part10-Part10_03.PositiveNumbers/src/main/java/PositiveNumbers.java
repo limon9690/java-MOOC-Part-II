@@ -11,4 +11,10 @@ public class PositiveNumbers {
 
     }
 
+    public static List<Integer> positive(List<Integer> numbers){
+        return numbers.stream() //starts the stream
+                .filter(n -> n > 0) //filters any value (integer) that is larger than zero
+                .collect(Collectors.toList()); //returns the stream as a new list
+    }
+
 }
