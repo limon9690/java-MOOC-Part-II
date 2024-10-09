@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class BookDirectory {
@@ -12,7 +14,17 @@ public class BookDirectory {
         this.directory.add(book);
     }
 
+    public void sort() {
+        Comparator<Book> comparator = Comparator
+              .comparing(Book::getAge);
+              //.thenComparing(Film::getName);
+
+        Collections.sort(directory, comparator);
+    }
+
     public void print() {
+        this.sort();
+
         System.out.println(this.directory.size() + " books in total.");
         System.out.println("");
         System.out.println("Books: ");
