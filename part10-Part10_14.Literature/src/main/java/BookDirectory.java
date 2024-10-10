@@ -16,8 +16,8 @@ public class BookDirectory {
 
     public void sort() {
         Comparator<Book> comparator = Comparator
-              .comparing(Book::getAge);
-              //.thenComparing(Film::getName);
+              .comparing(Book::getAge)
+              .thenComparing(Book::getName);
 
         Collections.sort(directory, comparator);
     }
