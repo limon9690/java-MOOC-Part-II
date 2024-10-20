@@ -17,15 +17,65 @@ public class MagicSquare {
 
     // implement these three methods
     public ArrayList<Integer> sumsOfRows() {
-        return new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int row = 0; row < this.square.length; row++) {
+            int sum = 0;
+            for (int col = 0; col < this.square[row].length; col++) {
+                sum += this.square[row][col];
+            }
+            list.add(sum);
+        }
+        return list;
     }
 
     public ArrayList<Integer> sumsOfColumns() {
-        return new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        int n = this.square.length;
+        int m = this.square[0].length;
+        int idx = 0;
+        
+        while (idx < m ) {
+            int row = 0;
+            int sum = 0;
+            while (row < n) {
+                sum += this.square[row][idx];
+                row++;
+            }
+            list.add(sum);
+            idx++;
+        }
+
+        return list;
     }
 
     public ArrayList<Integer> sumsOfDiagonals() {
-        return new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        int n = this.square.length;
+        int firstSum = 0;
+
+        for (int row = 0; row < this.square.length; row++) {
+            for (int col = 0; col < this.square[row].length; col++) {
+                if (row == col) {
+                    firstSum += this.square[row][col];
+                }
+            }
+        }
+
+        int secSum = 0;
+
+        for (int row = 0; row < this.square.length; row++) {
+            for (int col = 0; col < this.square[row].length; col++) {
+                if (row + col == n-1) {
+                    secSum += this.square[row][col];
+                }
+            }
+        }
+
+        list.add(firstSum);
+        list.add(secSum);
+        
+        return list;
     }
 
     // ready-made helper methods -- don't touch these
